@@ -67,14 +67,14 @@ export default function LoginForm({setIsLoggedIn}) {
                      onChange={(e) => setFormData({...formData,password:e.target.value})}/>
             </div>
 
-            <div className='flex items-center justify-between'>
+            {/* <div className='flex items-center justify-between'>
                   <div className='text-sm'>
                         <Link to="/forgotPassword" 
                         className="font-medium text-blue-600 hover:text-blue-500"> 
                               Forgot Your password?
                         </Link>
                   </div>
-            </div>
+            </div> */}
 
             <button type='submit'
             className='w-full flex justify-center py-2 px-4 border border-transparent 
