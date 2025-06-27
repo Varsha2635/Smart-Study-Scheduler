@@ -27,7 +27,7 @@ A full-stack personal study planner that automates schedule generation, manages 
 - **Tailwind CSS** for styling
 - **React Router** for routing
 
-### ⚙️ Backend – `server/`
+### Backend – `server/`
 
 - **Node.js** with **Express.js**
 - **JWT** for auth tokens
