@@ -1,5 +1,6 @@
 import React from 'react';
 import { Brain, Clock, Calendar, LineChart, Users, Star, PenTool, Globe } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const FeatureCard = ({icon, title, description}) =>(
       <div className='bg-white rounded-xl shadow-md p-6 hover:shadow-lg 
@@ -12,6 +13,10 @@ const FeatureCard = ({icon, title, description}) =>(
       </div>
 );
 export default function Features() {
+      const navigate = useNavigate();
+      const handleSignupClick = () =>{
+      navigate('/signup')
+      }
       const features =[
             {
                   icon: <Brain className='h-6 w-6 text-blue-600'/>,
@@ -72,7 +77,9 @@ export default function Features() {
                         <p className='text-gray-600 mb-6 max-w-2xl mx-auto'>
                               Team up with us and improve your grades using our smart study scheduler!
                         </p>
-                        <button className='bg-blue-600 text-white px-8 py-3 rounded-full 
+                        <button 
+                        onClick={handleSignupClick}
+                        className='bg-blue-600 text-white px-8 py-3 rounded-full 
                         shadow-md hover:shadow-lg transition-all
                         hover:bg-blue-700 transform hover:-translate-y-0.5'>
                               Create your Schedule Now 

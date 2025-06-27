@@ -1,7 +1,12 @@
 import React from 'react'
 import { Calendar,Clock,BookOpen, Book } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 export default function () {
+      const navigate = useNavigate();
+      const handleSignupClick = () =>{
+      navigate('/signup')
+      }
   return (
     <section className='pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden'>
       <div className='container mx-auto px-4 md:px-6'>
@@ -80,7 +85,9 @@ export default function () {
                                     </div>
                               ))}
 
-                              <button className='w-full mt-4 bg-gray-100 text-gray-700 rounded-lg
+                              <button
+                              onClick={handleSignupClick} 
+                              className='w-full mt-4 bg-gray-100 text-gray-700 rounded-lg
                               py-2 text-sm hover:bg-gray-200 transition-colors '> View Full Schedule</button>
                         </div>
                   </div>

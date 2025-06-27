@@ -14,10 +14,18 @@ const userSchema = new mongoose.mongoose.Schema(
             },
             password:{
                   type:String,
-                  rquired:true,
+                  required:true,
             },
 
       }
 )
+
+userSchema.index({ email: 1 });
+
+userSchema.methods.toJSON = function() {
+  const userObject = this.toObject();
+  delete userObject.password;
+  return userObject;
+};
 
 module.exports = mongoose.model("user",userSchema);

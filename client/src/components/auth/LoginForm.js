@@ -14,6 +14,14 @@ export default function LoginForm({setIsLoggedIn}) {
                   const res = await loginUser(formData.email, formData.password);
                   console.log("Login Success:",res.data);
 
+                  // //localStorage.setItem("user", JSON.stringify(res.data.user));
+                  // localStorage.setItem("token", res.data.token);
+                  // localStorage.setItem("user", JSON.stringify(res.data.user));
+
+                  //  // Set token for future axios requests
+                  // const token = res.data.token;
+                  // loginUser.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
                   //if login is successful
                   setIsLoggedIn(true);
                   navigate('/dashboard');
@@ -61,7 +69,7 @@ export default function LoginForm({setIsLoggedIn}) {
 
             <div className='flex items-center justify-between'>
                   <div className='text-sm'>
-                        <Link to="/forgot-password" 
+                        <Link to="/forgotPassword" 
                         className="font-medium text-blue-600 hover:text-blue-500"> 
                               Forgot Your password?
                         </Link>

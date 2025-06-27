@@ -131,5 +131,12 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+router.post('/logout', async (req, res) => {
+  res.clearCookie('token'); // removes the token from the browser
+  return res.status(200).json({
+    success: true,
+    message: "User logged out successfully"
+  });
+});
 
 module.exports = router;

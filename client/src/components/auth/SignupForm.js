@@ -24,6 +24,13 @@ export default function SignupForm({setIsLoggedIn}) {
 
       const handleSignup = async (e) =>{
             e.preventDefault();
+
+            if(formData.password!==formData.confirmPassword){
+                  setError('Password and Confirm Password do not match');
+                  return;
+            }
+            setError(''); // clear any previous errors
+
             try{
                   const res = await signupUser(formData.name, formData.email, formData.password);
                   console.log("Signup Success:", res.data);
